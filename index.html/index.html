@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>I Love You, Ratna</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff4f6;--pink:#d64e73;--pink2:#a63258;--ink:#55243a;--card:#fff;--gold:#e6c27f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1424}}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:radial-gradient(ellipse at 12% 18%,#ffdce8 0,transparent 38%),radial-gradient(ellipse at 86% 78%,#e9dcf4 0,transparent 34%),linear-gradient(135deg,#fff9f2,#f8eaf1);font-family:Poppins,system-ui,sans-serif;display:flex;justify-content:center;align-items:center;overflow:hidden}
+#app{position:relative;width:min(430px,100vw);height:min(900px,100%);background-color:#fffaf9;border:1px solid #ffffffd9;border-radius:34px;overflow:hidden;box-shadow:0 28px 100px #87354a26,0 6px 28px #d4879a20;background-image:radial-gradient(#e9d4db 0.75px,transparent 0.75px),linear-gradient(155deg,#fff 0%,#fffaf9 55%,#fff0f4 100%);background-size:24px 24px,100% 100%}
+.s{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;animation:in .45s cubic-bezier(.2,.7,.25,1)}
+.s.on{display:flex}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.grad{background:radial-gradient(ellipse at 50% 22%,#fffafc 0,transparent 56%),linear-gradient(155deg,#fff0f4,#f6dce9)}
+.circ{flex:none;width:150px;height:150px;border-radius:50%;border:5px solid #fff;background:linear-gradient(145deg,#ffe7ed,#f2c5d6);display:flex;align-items:center;justify-content:center;font-size:78px;box-shadow:0 14px 34px #a63c5c24,0 0 0 1px #e9b5c5;position:relative;animation:fl 3.4s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-8px)}}
+.badge{position:absolute;top:-6px;right:-14px;background:linear-gradient(145deg,#ed7897,#b83d5e);width:38px;height:38px;border:3px solid #fff;border-radius:50%;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 14px #b83d5e55}
+.tag{background:linear-gradient(110deg,#71354f,#3d293a);color:#fff;font-size:11px;font-weight:600;padding:8px 15px;border-radius:999px;margin-top:-12px;position:relative;box-shadow:0 8px 20px #3b2a3329;letter-spacing:.3px}
+h1,h2{font-family:'Dancing Script',cursive,serif}
+h1{font-size:clamp(36px,9vw,46px);line-height:1.1;margin:22px 0 10px;color:#351126;text-shadow:0 3px 14px #e9b8d055}
+h1 .nm{color:#c43b67}
+h2{font-size:34px;line-height:1.12;color:#8a1d46;margin-top:26px}
+p{color:#444;line-height:1.6;font-size:15px}
+.btn{border:0;cursor:pointer;font:600 15px Poppins,sans-serif;letter-spacing:.2px;color:#fff;background:linear-gradient(135deg,#e97894,#c63e68 72%,#9f3157);padding:14px 30px;border-radius:40px;box-shadow:0 10px 24px #c34a7040,inset 0 1px 0 #ffffff66;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px #c34a7059,inset 0 1px 0 #ffffff66}
+.btn:active{transform:scale(.95)}
+.btn.ghost{background:linear-gradient(135deg,#fff,#fff6f8);color:#815b6a;border:1px solid #f0dce2;box-shadow:0 5px 14px #7f3b4810}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(145deg,#fffefd,#fff5f8);border:1px solid #fff;border-bottom:0;border-radius:30px 30px 0 0;padding:18px 20px 82px;box-shadow:0 -10px 36px #a9426018}
+.sheet i{display:block;width:42px;height:4px;border-radius:4px;background:linear-gradient(90deg,#f1b1c1,#d9577b);margin:0 auto 14px}
+.sheet p{color:var(--ink);font-weight:500;margin-bottom:14px}
+.row{display:flex;gap:12px;justify-content:center}
+.back{position:absolute;top:16px;left:18px;color:var(--pink);font:600 13px Poppins;cursor:pointer;background:#ffffffb8;border:1px solid #fff;border-radius:999px;padding:7px 12px;z-index:5;backdrop-filter:blur(8px)}
+.dots{position:absolute;top:0;left:50%;transform:translateX(-50%);background:#fffdfef2;padding:11px 17px;border-radius:0 0 18px 18px;display:flex;gap:7px;z-index:6;box-shadow:0 5px 18px #5c183015}
+.dots b{width:7px;height:7px;border-radius:50%;background:#efc3d0}
+.dots b.d{background:#c93d5f}.dots b.c{width:11px;height:11px;margin-top:-2px;background:#e0607e}
+.music{position:absolute;top:14px;right:16px;width:46px;height:46px;font-size:21px;background:linear-gradient(145deg,#fff,#fff2f6);border:1px solid #f3d5df;border-radius:50%;cursor:pointer;z-index:7;box-shadow:0 7px 20px #a84c6820;backdrop-filter:blur(8px);transition:transform .2s,opacity .2s}
+.music:hover{transform:scale(1.08)}
+.signature{position:absolute;right:14px;bottom:14px;z-index:8;display:flex;align-items:center;gap:5px;padding:8px 15px;border:1px solid #e6c27f;border-radius:999px;background:linear-gradient(135deg,#fff9eaf5,#fffef9f5);box-shadow:0 8px 22px #7f3b4824;color:#69404a;font-family:'Dancing Script',cursive;font-size:18px;font-weight:600;letter-spacing:.2px;white-space:nowrap;backdrop-filter:blur(8px)}
+.signature span{color:#d64e73;font-family:Poppins,sans-serif;font-size:13px}
+.signature strong{color:#a82f5c;font-size:19px;letter-spacing:.2px}
+.heart{position:absolute;bottom:-30px;pointer-events:none;animation:up linear forwards;z-index:1}
+@keyframes up{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+.env{width:270px;height:170px;background:#fdeec9;border:2px solid #cf9b45;border-radius:6px;position:relative;cursor:pointer;margin:20px 0;box-shadow:0 12px 30px #e5c07a77;transition:transform .35s,box-shadow .35s;transform:rotate(-1.5deg);perspective:900px}
+.env:hover{transform:rotate(0) scale(1.04)}
+.env.open{transform:rotate(0) scale(1.02);box-shadow:0 22px 48px #b5686855}
+.env .fl{position:absolute;inset:0;z-index:2;clip-path:polygon(0 0,100% 0,50% 60%);background:linear-gradient(145deg,#f6d2dc,#eeb5c5);transition:transform .65s cubic-bezier(.2,.8,.2,1);transform-origin:top;backface-visibility:hidden}
+.env.open .fl{transform:rotateX(180deg)}
+.env .letter-preview{position:absolute;left:12%;bottom:8px;z-index:1;width:76%;height:138px;border:1px solid #f0d7d0;border-radius:10px;background:linear-gradient(160deg,#fffefa,#fff1f4);box-shadow:0 7px 20px #773d412e;display:flex;flex-direction:column;align-items:center;padding:15px 14px;opacity:0;transform:translateY(22px) scale(.86);transition:transform .75s cubic-bezier(.2,.8,.2,1),opacity .25s ease;pointer-events:none}
+.env.open .letter-preview{opacity:1;transform:translateY(-108px) scale(1.02);transition-delay:.12s}
+.letter-preview span{font-size:23px}
+.letter-preview strong{margin:2px 0 7px;color:#a9325a;font:600 19px 'Dancing Script',cursive}
+.letter-preview i{width:78%;height:3px;margin:3px 0;border-radius:4px;background:#f1dce0}
+.env .em{position:absolute;inset:0;top:30px;z-index:3;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.env .seal{width:68px;height:68px;border:3px solid #fff4df;border-radius:50%;background:radial-gradient(circle at 30% 24%,#ed98a7,#b83d5e 76%);box-shadow:0 6px 16px #83394c55,inset 0 0 0 1px #ffffff80;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(1.5deg);cursor:pointer;pointer-events:auto}
+.env.open .em{animation:sealPop .48s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes sealPop{0%{transform:scale(1);opacity:1}35%{transform:scale(1.2) rotate(-8deg);opacity:1}100%{transform:translateY(-24px) scale(.45) rotate(16deg);opacity:0}}
+.env .seal span{font:600 42px/.78 'Dancing Script',cursive;text-shadow:0 2px 6px #7f294855}
+.env .seal small{margin-top:5px;font:600 8px Poppins,sans-serif;letter-spacing:1px;text-transform:uppercase}
+.envelope-title,.open-hint{transition:opacity .25s,transform .25s}
+.s.opening .envelope-title{opacity:0;transform:translateY(-8px)}
+.s.opening .open-hint{opacity:0}
+.lbl{font-weight:600;letter-spacing:2px;font-size:12px;color:var(--pink);text-transform:uppercase}
+.paper{background-color:#fffaf0;background-image:repeating-linear-gradient(transparent 0 33px,#f0e2d2 34px);border:1px solid #f3e7d8;border-radius:18px;padding:20px 22px;text-align:left;width:100%;box-shadow:0 12px 30px #754b3214;font-family:'Dancing Script',cursive;font-size:22px;line-height:34px;color:#35242b;min-height:330px;margin-top:6px}
+.meter{background:linear-gradient(145deg,#fff,#fff8fa);border:1px solid #fff;border-radius:30px;padding:26px 20px;width:100%;box-shadow:0 16px 42px #87354a20}
+.bar{height:18px;background:#f8e2e9;border:1px solid #f3d4de;border-radius:20px;overflow:hidden;margin:14px 0 8px}
+.bar div{height:100%;width:0;background:linear-gradient(90deg,#f3a5bb,#cf3c68);border-radius:20px;transition:width .45s}
+.hb{width:92px;height:92px;border-radius:50%;border:4px solid #fff;background:radial-gradient(circle at 32% 26%,#f990ad,#e6326d 75%);font-size:43px;cursor:pointer;box-shadow:0 10px 28px #e6326d50,0 0 0 1px #f4aac0;animation:pu 1.35s infinite}
+@keyframes pu{50%{transform:scale(1.08)}}
+.chips{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:14px 0}
+.chip{background:linear-gradient(145deg,#fff,#fff8fa);border:1px solid #fff;border-radius:20px;padding:13px 15px;box-shadow:0 8px 20px #70344a12;font-size:11px;color:#755e69;font-style:italic;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.chip:hover{transform:translateY(-3px);box-shadow:0 12px 24px #70344a1c}
+.chip span{display:block;font-size:30px;font-style:normal;line-height:1.15}
+.toast{position:absolute;left:50%;bottom:96px;transform:translateX(-50%);background:linear-gradient(120deg,#5b3045,#392536);color:#fff;font-size:13px;padding:11px 17px;border-radius:16px;z-index:20;box-shadow:0 10px 24px #35112633;animation:in .3s;max-width:85%;text-align:center}
+.pop{position:absolute;inset:0;background:#2c17265c;backdrop-filter:blur(5px);z-index:30;display:flex;align-items:center;justify-content:center;padding:30px;animation:popBackdrop .3s ease-out both}
+.pop>div{width:min(330px,100%);background:linear-gradient(145deg,#fff,#fff5f8);border:1px solid #fff;border-radius:26px;padding:26px;text-align:center;box-shadow:0 22px 60px #3511264d;animation:popCard .68s cubic-bezier(.18,1.35,.35,1) both}
+.pop p{margin:10px 0 18px;color:#4b3040;font-size:15px;font-weight:500;animation:messageReveal .4s .16s both}
+.pop .btn{min-width:108px;animation:buttonPop .42s .25s both}
+@keyframes popBackdrop{from{opacity:0}to{opacity:1}}
+@keyframes popCard{0%{opacity:0;transform:translateY(30px) scale(.72) rotate(-3deg)}68%{opacity:1;transform:translateY(-5px) scale(1.045) rotate(1deg)}100%{opacity:1;transform:none}}
+@keyframes messageReveal{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@keyframes buttonPop{0%{opacity:0;transform:scale(.72)}75%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:none}}
+.final-screen{justify-content:flex-start;padding:64px 24px 0}
+.final-screen .final-hero{width:128px;height:128px;font-size:64px}
+.final-chips{width:100%;max-width:360px;gap:12px;margin:18px 0}
+.final-chips .chip{flex:1 1 135px;max-width:170px;min-height:88px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.final-panel{position:absolute;left:0;right:0;bottom:0;z-index:2;background:linear-gradient(160deg,#fffefd,#fff5f8);border:1px solid #fff;border-bottom:0;border-radius:30px 30px 0 0;padding:22px 20px calc(82px + env(safe-area-inset-bottom,0px));box-shadow:0 -14px 40px #9c3d5f1c}
+.final-title{margin:0;font-size:clamp(25px,7vw,32px);line-height:1.12;color:var(--pink)}
+.final-kicker{font-size:10px;margin:7px 0 10px;color:#bd7a90;letter-spacing:2px}
+.final-note{max-width:370px;margin:0 auto;color:#392a32;line-height:1.55;font-size:clamp(13px,3.8vw,15px)}
+.final-panel .btn{margin-top:14px;padding:10px 24px;font-size:14px}
+.btn:focus-visible,.music:focus-visible,.back:focus-visible,.chip:focus-visible{outline:3px solid #e6c27f;outline-offset:3px}
+@media(max-width:360px){.signature{right:10px;bottom:10px;padding:7px 10px}.circ{width:136px;height:136px}}
+@media(max-height:700px){.final-screen{overflow-y:auto;justify-content:flex-start;padding:42px 16px 70px}.final-screen .final-hero{width:88px;height:88px;font-size:44px}.final-chips{flex-wrap:nowrap;margin:8px 0;gap:8px}.final-chips .chip{flex:1 1 0;max-width:none;min-height:70px;padding:8px 5px;font-size:9px}.final-chips .chip span{font-size:24px}.final-panel{position:relative;left:auto;right:auto;bottom:auto;width:100%;margin-top:8px;padding:16px 14px 70px}.final-title{font-size:clamp(23px,6.5vw,26px)}.final-kicker{margin:4px 0 7px}.final-note{font-size:12px;line-height:1.42}.final-panel .btn{margin-top:10px;padding:9px 22px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+@media(prefers-reduced-motion:reduce){
+ .env{transition-duration:.65s,.35s!important}
+ .env .fl{transition-duration:.65s!important}
+ .env .letter-preview{transition-duration:.75s,.25s!important;transition-delay:.12s!important}
+ .env .em{animation-duration:.48s!important}
+ .envelope-title,.open-hint{transition-duration:.25s!important}
+ .pop{animation-duration:.25s!important}
+ .pop>div{animation:popCardReduced .25s ease-out both!important}
+ .pop p,.pop .btn{animation-duration:.25s!important;animation-delay:0s!important}
+ @keyframes popCardReduced{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+}
+</style></head><body>
+<div id="app">
+<div class="dots" id="dots" style="display:none"></div>
+<button class="music" id="mu" title="Play/Pause Pal song" aria-label="Play/Pause Pal song" aria-pressed="false">🎵</button>
+<audio id="song" src="pal-song.mp3" preload="auto" loop></audio>
+<div class="signature" aria-label="Made with love by Prachi">Made with <span>♥</span> by <strong>Prachi</strong></div>
+
+<!-- 0 landing -->
+<section class="s on">
+ <div class="circ"><span class="badge">🤍</span>🐻</div>
+ <div class="tag">I’m sorry. Please forgive me 💗</div>
+ <h1>I Love You, <span class="nm">Ratna</span> 💖</h1>
+ <p>But I’m ready to make it right.<br>Will you hear me out?</p>
+ <br><button class="btn" data-go="1">Listen to my heart 💌</button>
+</section>
+
+<!-- 1-3 slides -->
+<section class="s grad" data-slide><div class="circ">😭</div><h2>I Know I Hurt You</h2><div class="sheet"><i></i><p>I love you with all my heart. 💗</p><div class="row"><button class="btn ghost" data-go="0">← Back</button><button class="btn" data-go="2">Next →</button></div></div></section>
+<section class="s grad" data-slide><div class="circ">🐻‍❄️🐻</div><h2>Ratna, You Are My Everything 😢</h2><div class="sheet"><i></i><p>You are my whole world, my man.</p><div class="row"><button class="btn ghost" data-go="1">← Back</button><button class="btn" data-go="3">Next →</button></div></div></section>
+<section class="s grad" data-slide><div class="circ">🥺</div><h2>I’m Really Sorry</h2><div class="sheet"><i></i><p>I’m really sorry for hurting you. I hope you can forgive me. 💗</p><div class="row"><button class="btn ghost" data-go="2">← Back</button><button class="btn" data-go="4">Next →</button></div></div></section>
+
+<!-- 4 envelope -->
+<section class="s">
+ <button class="back" data-go="3">← Back</button>
+ <div class="lbl envelope-title">💌 A letter awaits you</div>
+ <div class="env" id="env"><div class="letter-preview" aria-hidden="true"><span>💌</span><strong>For Ratna</strong><i></i><i></i></div><div class="fl"></div><div class="em"><div class="seal"><span id="seal-initial">R</span><small class="nm">Ratna</small></div></div></div>
+ <div class="lbl open-hint" style="font-size:15px">Tap the R seal to open 💌</div>
+</section>
+
+<!-- 5 letter -->
+<section class="s" style="justify-content:flex-start;padding-top:56px">
+ <button class="back" data-go="4">← Back</button>
+ <div class="lbl" style="margin-bottom:6px">A virtual peace offering 💗</div>
+ <div class="paper" id="paper"></div>
+ <div style="margin-top:16px"><button class="btn" id="cont" data-go="6">Continue →</button></div>
+</section>
+
+<!-- 6 meter -->
+<section class="s">
+ <button class="back" data-go="5">← Back</button>
+ <div class="meter">
+  <h2 style="margin:0;font-size:28px;color:var(--pink)">FORGIVENESS METER ❤️</h2><br>
+  <div class="circ" style="width:110px;height:110px;font-size:56px;margin:0 auto;background:#fff" id="mb">😭</div>
+  <div class="lbl" id="ms" style="margin-top:10px;color:#8a4a64">Please forgive me 🥺</div>
+  <div class="bar"><div id="fill"></div></div>
+  <div class="lbl" id="pc" style="font-size:20px">0% Forgiven</div>
+  <p style="font-size:12px;font-style:italic;color:var(--pink);margin:12px 0;text-transform:uppercase">Tap the heart 💗</p>
+  <button class="hb" id="hb">🤍</button>
+  <div style="margin-top:14px"><button class="btn" id="m2" data-go="7" style="display:none">Next →</button></div>
+ </div>
+</section>
+
+<!-- 7 final -->
+<section class="s grad final-screen">
+ <button class="back" data-go="6">← Back</button>
+ <div class="circ final-hero">🎉</div>
+ <div class="chips final-chips">
+  <div class="chip" data-g="Sending you the biggest hug! 🫂"><span>🫂</span>A warm hug for you</div>
+  <div class="chip" data-g="You have all my love! 🫶😊"><span>🫶😊</span>All my love</div>
+  <div class="chip" data-g="You brighten my days! 🌻"><span>🌻</span>A little sunshine</div>
+ </div>
+ <div class="final-panel">
+  <h2 class="final-title">PEACE TREATY SIGNED! 🕊️</h2>
+  <div class="final-kicker">NEW BEGINNINGS AHEAD</div>
+  <p class="final-note">Thank you for being the most forgiving person in my life.<br>I love you so much, my love. 🥹<br>Please forgive me. I know it isn’t easy for you, but I hope we can make many beautiful new memories together soon. 🥹</p>
+  <button class="btn" id="again">Replay 🔁</button>
+ </div>
+</section>
+</div>
+
+<script>
+const NAME="Ratna"; // Change the name here.
+document.querySelectorAll('.nm').forEach(e=>e.textContent=NAME);
+document.getElementById('seal-initial').textContent=NAME.charAt(0).toUpperCase();
+const app=document.getElementById('app'),S=[...app.querySelectorAll('.s')],dots=document.getElementById('dots');
+dots.innerHTML=S.map(()=>'<b></b>').join('');
+let cur=0,typer,envelopeTimer;
+const LETTER=`My Dearest ${NAME},\n\nI’m really sorry, my love. I accidentally upset the most precious and adorable person in my life — you. 🥺\n\nPlease forgive me if I hurt you or wasted even a second of your time being upset. You mean the entire world to me. 💕`;
+function go(i){
+  if(cur===4&&i!==4)clearTimeout(envelopeTimer);
+  S[cur].classList.remove('on');cur=i;S[i].classList.add('on');
+  dots.style.display=i?'flex':'none';
+  [...dots.children].forEach((d,k)=>d.className=k<i?'d':k==i?'c':'');
+  if(i==4){document.getElementById('env').classList.remove('open');S[i].classList.remove('opening')}
+  if(i==5)type();
+  if(i==7){confetti();toast('Peace treaty signed 🕊️💖')}
+}
+document.addEventListener('click',e=>{
+  const g=e.target.closest('[data-go]');if(g)go(+g.dataset.go);
+  const t=e.target.closest('[data-g]');if(t)toast(t.dataset.g);
+});
+document.getElementById('again').onclick=()=>{fill=0;upd();go(0)};
+// envelope
+document.getElementById('env').onclick=function(){
+  if(this.classList.contains('open'))return;
+  this.closest('.s').classList.add('opening');
+  this.classList.add('open');
+  envelopeTimer=setTimeout(()=>{if(cur===4)go(5)},1250);
+};
+// typewriter
+function type(){
+  clearInterval(typer);const p=document.getElementById('paper');p.textContent='';p.style.whiteSpace='pre-wrap';
+  let n=0;typer=setInterval(()=>{p.textContent=LETTER.slice(0,++n);if(n>=LETTER.length)clearInterval(typer)},35);
+}
+// meter
+let fill=0;
+const stages=[['😭','Please forgive me 🥺'],['🥺','Is your heart softening? 👀'],['🐻','Halfway there! 😳'],['🧸','Almost there… 🥹'],['🥰','You forgave me! 🎉']];
+function upd(){
+  document.getElementById('fill').style.width=fill+'%';
+  document.getElementById('pc').textContent=fill+'% Forgiven';
+  const k=Math.min(4,Math.floor(fill/25));
+  document.getElementById('mb').textContent=stages[k][0];
+  document.getElementById('ms').textContent=stages[k][1];
+  document.getElementById('hb').textContent=fill>=100?'💖':fill>0?'❤️':'🤍';
+  document.getElementById('m2').style.display=fill>=100?'inline-block':'none';
+}
+document.getElementById('hb').onclick=()=>{
+  if(fill>=100)return;fill=Math.min(100,fill+10);upd();burst(3);
+  if(fill==50)toast('Halfway there! Just a little more 🥺');
+  if(fill==100){confetti();popup('Thank you so much, my man! 💖')}
+};
+// toast & popup
+function toast(m){const t=document.createElement('div');t.className='toast';t.textContent=m;app.appendChild(t);setTimeout(()=>t.remove(),2400)}
+function popup(m){const p=document.createElement('div');p.className='pop';p.innerHTML=`<div><p>${m}</p><button class="btn">OK 💕</button></div>`;p.querySelector('button').onclick=()=>p.remove();app.appendChild(p)}
+// hearts
+function burst(n,list=['💗','💖','💕','💓']){for(let i=0;i<n;i++){const h=document.createElement('div');h.className='heart';h.textContent=list[Math.random()*list.length|0];
+  h.style.left=Math.random()*95+'%';h.style.fontSize=10+Math.random()*22+'px';h.style.animationDuration=4+Math.random()*4+'s';app.appendChild(h);setTimeout(()=>h.remove(),8500)}}
+function confetti(){burst(30,['🎉','✨','🌸','💖','🎊','⭐'])}
+setInterval(()=>burst(1),900);
+// Play the supplied song only after the user taps the music button.
+const song=document.getElementById('song'),musicButton=document.getElementById('mu');
+musicButton.style.opacity=.4;
+musicButton.onclick=async function(){
+  if(song.paused){
+    try{
+      await song.play();
+      this.style.opacity=1;
+      this.setAttribute('aria-pressed','true');
+    }catch(error){
+      this.style.opacity=.4;
+      this.setAttribute('aria-pressed','false');
+      toast('Song could not be played. Please check that pal-song.mp3 is available.');
+    }
+  }else{
+    song.pause();
+    this.style.opacity=.4;
+    this.setAttribute('aria-pressed','false');
+  }
+};
+song.addEventListener('pause',()=>{musicButton.style.opacity=.4;musicButton.setAttribute('aria-pressed','false')});
+</script></body></html>
